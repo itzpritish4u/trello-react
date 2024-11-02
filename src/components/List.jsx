@@ -2,18 +2,20 @@ import { useEffect, useState } from "react";
 import { getCards } from "../APIs/card/getCards";
 import { createCard } from "../APIs/card/createCard";
 import { archiveCard } from "../APIs/card/deleteCard";
-import CardItem from "./CardItem";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faAdd } from "@fortawesome/free-solid-svg-icons";
 import toast from "react-hot-toast";
+
 import Notification from "./Notification";
+import CardItem from "./CardItem";
 
 import { Box, IconButton, InputBase, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
 
 function List({ data, handleDeleteList, setLoading }) {
   const [cards, setCards] = useState([]);
-  const theme  = useTheme();
+  const theme = useTheme();
 
   async function fetchCards() {
     try {
@@ -74,7 +76,7 @@ function List({ data, handleDeleteList, setLoading }) {
         sx={{
           bgcolor: theme.palette.primary.main,
           color: theme.palette.text.primary,
-          minWidth: {lg:400,sm:300},
+          minWidth: { lg: 400, sm: 300 },
           p: 3,
           borderRadius: 2,
           height: "fit-content",
@@ -100,7 +102,10 @@ function List({ data, handleDeleteList, setLoading }) {
         >
           <Typography
             variant="h7"
-            sx={{ color: theme.palette.text.primary, fontFamily: theme.typography.fontFamily }}
+            sx={{
+              color: theme.palette.text.primary,
+              fontFamily: theme.typography.fontFamily,
+            }}
           >
             {data.name}
           </Typography>

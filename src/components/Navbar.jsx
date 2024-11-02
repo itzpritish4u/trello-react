@@ -1,9 +1,10 @@
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { useTheme } from "@emotion/react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrello } from "@fortawesome/free-brands-svg-icons/faTrello";
-import { useTheme } from "@emotion/react";
 
 function Navbar() {
   const theme = useTheme();

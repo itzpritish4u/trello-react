@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import Notification from "./Notification";
-import { getChecklists } from "../APIs/checklist/getChecklists";
-import Checklist from "./Checklist";
-import { createChecklist } from "../APIs/checklist/createChecklist";
-import { deleteChecklist } from "../APIs/checklist/deleteChecklist";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+
+import Notification from "./Notification";
+import Checklist from "./Checklist";
+
+import { getChecklists } from "../APIs/checklist/getChecklists";
+import { createChecklist } from "../APIs/checklist/createChecklist";
+import { deleteChecklist } from "../APIs/checklist/deleteChecklist";
+
 import {
   Button,
   Dialog,
-  DialogActions,
   DialogContent,
-  DialogContentText,
   DialogTitle,
   IconButton,
   InputBase,
@@ -131,7 +132,7 @@ function Card({ modal, handleCardModal, data, setLoading }) {
                   type="submit"
                   variant="contained"
                   sx={{
-                    backgroundColor:theme.palette.primary.main,
+                    backgroundColor: theme.palette.primary.main,
                     color: theme.palette.text.primary,
                     borderRadius: "4px",
                     fontFamily: theme.typography.fontFamily,

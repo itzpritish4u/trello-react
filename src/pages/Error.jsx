@@ -15,18 +15,37 @@ function ErrorPage() {
         bgcolor: "#111",
       }}
     >
-      <Typography variant="h1" sx={{ fontSize: {xs:"2rem",sm:"3rem",md:'4rem',lg:'5rem'}, fontWeight:"700",marginBottom: "20px" ,color:'white'}}>
+      <Typography
+        variant="h1"
+        sx={{
+          fontSize: { xs: "2rem", sm: "3rem", md: "4rem", lg: "5rem" },
+          fontWeight: "700",
+          marginBottom: "20px",
+          color: "white",
+        }}
+      >
         404
       </Typography>
 
-      <Typography variant="h3" sx={{ fontSize: {xs:"1.5rem",sm:"2rem",md:'2.5rem',lg:'3rem'}, marginBottom: "20px" ,color:'white'}}>
+      <Typography
+        variant="h3"
+        sx={{
+          fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
+          marginBottom: "20px",
+          color: "white",
+        }}
+      >
         Page Not found
       </Typography>
       <Button
         component={Link}
         to="/boards"
         variant="text"
-        sx={{ fontSize: {xs:"1rem",sm:"1rem",md:'1rem',lg:'1rem'}, textDecoration: "none", color: "white" }}
+        sx={{
+          fontSize: { xs: "1rem", sm: "1rem", md: "1rem", lg: "1rem" },
+          textDecoration: "none",
+          color: "white",
+        }}
       >
         Go back to view boards
       </Button>

@@ -1,11 +1,11 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ThemeProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
-import Navbar from './components/Navbar';
-import AllBoards from './pages/AllBoards';
-import SingleBoard from './pages/SingleBoard';
-import Error from './pages/Error';
-import theme from './theme';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
+import Navbar from "./components/Navbar";
+import AllBoards from "./pages/AllBoards";
+import SingleBoard from "./pages/SingleBoard";
+import Error from "./pages/Error";
+import theme from "./theme";
 
 function App() {
   return (

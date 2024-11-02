@@ -1,18 +1,18 @@
-// Checkitem.js
 import { Checkbox, IconButton, Box, Typography } from "@mui/material";
+import { useTheme } from "@emotion/react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import { useTheme } from "@emotion/react";
 
 function Checkitem({
   item,
-  handleDeleteCheckitems,  // Updated prop name
-  handleUpdateCheckitem,    // Correct prop
+  handleDeleteCheckitems,
+  handleUpdateCheckitem
 }) {
   const theme = useTheme();
 
   const handleCheck = async (e) => {
-    await handleUpdateCheckitem(item.id, e.target.checked);  // Ensure async handling
+    await handleUpdateCheckitem(item.id, e.target.checked);
   };
 
   return (
@@ -30,7 +30,7 @@ function Checkitem({
       <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
         <Checkbox
           checked={item.state === "complete"}
-          onChange={handleCheck}  // Updated to async handling
+          onChange={handleCheck}
           sx={{
             color: theme.palette.secondary.extraLight,
             "&.Mui-checked": {
@@ -45,7 +45,7 @@ function Checkitem({
       <IconButton
         edge="end"
         aria-label="delete"
-        onClick={() => handleDeleteCheckitems(item.id)} // Correct prop function
+        onClick={() => handleDeleteCheckitems(item.id)}
         sx={{
           color: theme.palette.secondary.light,
           fontSize: "15px",

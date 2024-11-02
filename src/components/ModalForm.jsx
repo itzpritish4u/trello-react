@@ -63,7 +63,7 @@ function ModalForm({ item, modal, handleModal, handleSubmit }) {
           <InputBase
             autoFocus
             id="name"
-            placeholder={item+` name`}
+            placeholder={item + ` name`}
             sx={{
               bgcolor: "none",
               color: theme.palette.text.primary,
@@ -75,7 +75,7 @@ function ModalForm({ item, modal, handleModal, handleSubmit }) {
               mb: 1,
             }}
           />
-          <Box sx={{ display: "flex" , marginTop: '10px'}}>
+          <Box sx={{ display: "flex", marginTop: "10px" }}>
             <Button
               variant="contained"
               type="submit"

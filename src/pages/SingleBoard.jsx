@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useTheme } from "@mui/material/styles";
+
 import toast from "react-hot-toast";
 
 import { getLists } from "../APIs/list/getLists";
@@ -169,35 +171,40 @@ function SingleBoard() {
               border: `1px solid ${theme.palette.secondary.main}`,
               borderRadius: "8px",
               width: "100%",
-              flexDirection: { lg: 'row', md: 'row', sm: 'column', xs: 'column' }
+              flexDirection: {
+                lg: "row",
+                md: "row",
+                sm: "column",
+                xs: "column",
+              },
             }}
           >
-            {lists.length > 0 ? (
-              lists.map((list) => (
-                <List
-                  data={list}
-                  key={list.id}
-                  handleDeleteList={handleDeleteList}
-                  setLoading={setLoading}
-                />
-              ))
-            ) : (
-              !loading && <Box
-                minWidth={false}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "100%",
-                  height: "100%",
-                  p: 5,
-                  color: theme.palette.secondary.extraLight,
-                  textAlign: 'center'
-                }}
-              >
-                No Lists available on this board
-              </Box>
-            )}
+            {lists.length > 0
+              ? lists.map((list) => (
+                  <List
+                    data={list}
+                    key={list.id}
+                    handleDeleteList={handleDeleteList}
+                    setLoading={setLoading}
+                  />
+                ))
+              : !loading && (
+                  <Box
+                    minWidth={false}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "100%",
+                      height: "100%",
+                      p: 5,
+                      color: theme.palette.secondary.extraLight,
+                      textAlign: "center",
+                    }}
+                  >
+                    No Lists available on this board
+                  </Box>
+                )}
           </Box>
         </Box>
 

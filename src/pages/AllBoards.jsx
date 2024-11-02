@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Container, Typography, Button, Box } from "@mui/material";
-import toast from "react-hot-toast";
 import { useTheme } from "@mui/material/styles";
+
+import toast from "react-hot-toast";
 
 import { getAllBoards } from "../APIs/board/getAllBoards";
 import { createBoard } from "../APIs/board/createBoard";
@@ -39,9 +40,6 @@ function AllBoards() {
     e.target.name.value = "";
 
     try {
-      if (boards.length == 10) {
-        throw new Error("Board creation limit exceeded!");
-      }
       setLoading(true);
       const newBoard = await createBoard(boardName);
       setBoards((prevBoards) => [...prevBoards, newBoard]);
@@ -97,25 +95,25 @@ function AllBoards() {
               marginBottom: "20px",
             }}
           >
-            {boards.length > 0 ? (
-              boards.map((item) => <Board data={item} key={item.id} />)
-            ) : (
-              !loading && <Box
-                minWidth={false}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "100%",
-                  height: "100%",
-                  p: 5,
-                  color: theme.palette.secondary.extraLight,
-                  textAlign: "center",
-                }}
-              >
-                No Boards available!
-              </Box>
-            )}
+            {boards.length > 0
+              ? boards.map((item) => <Board data={item} key={item.id} />)
+              : !loading && (
+                  <Box
+                    minWidth={false}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "100%",
+                      height: "100%",
+                      p: 5,
+                      color: theme.palette.secondary.extraLight,
+                      textAlign: "center",
+                    }}
+                  >
+                    No Boards available!
+                  </Box>
+                )}
           </Box>
           <Button
             id="openModalBtn"
