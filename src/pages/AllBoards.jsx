@@ -1,16 +1,17 @@
-// BoardsPage.js
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Typography, Button, Box } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import ModalForm from "../components/common/ModalForm";
-import Board from "../components/Board";
-import Loader from "../components/common/Loader";
 import toast from "react-hot-toast";
-import { getAllBoards } from "../apis/board/getAllBoards";
-import { createBoard } from "../apis/board/createBoard";
-import Notification from "../components/common/Notification";
+import { useTheme } from "@mui/material/styles";
 
-function BoardsPage() {
+import { getAllBoards } from "../APIs/board/getAllBoards";
+import { createBoard } from "../APIs/board/createBoard";
+
+import ModalForm from "../components/ModalForm";
+import Board from "../components/Board";
+import Loader from "../components/Loader";
+import Notification from "../components/Notification";
+
+function AllBoards() {
   const theme = useTheme();
   const [boards, setBoards] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -149,4 +150,4 @@ function BoardsPage() {
   );
 }
 
-export default BoardsPage;
+export default AllBoards;
